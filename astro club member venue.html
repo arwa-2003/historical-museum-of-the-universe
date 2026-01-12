@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Astro Club Venue | Historical Museum of the Universe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="museumLogo.png" alt="Logo" width="40" height="40" class="me-2">
+          Historical Museum
+        </a>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Main hall</a></li>
+            <li class="nav-item"><a class="nav-link" href="FromTheBigBangToTheBlackHoles.html">Big Bang</a></li>
+            <li class="nav-item"><a class="nav-link" href="spacephotogallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="astro club member venue.html">Astro Club</a></li>
+            <li class="nav-item"><a class="nav-link" href="store.html">Store</a></li>
+            <li class="nav-item"><a class="nav-link" href="funpage.html">Magic planet</a></li>
+            <li class="nav-item"><a class="nav-link" href="questionnaire.html">Help us</a></li>
+            <li class="nav-item"><a class="nav-link" href="contactUs.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link active" href="aboutUs.html">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <!--toptitle-->
+    
+    <div class="position-relative text-white text-center" style="height: 60vh;">
+      <img src="headBg.jpeg" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Background" >
+      <div class="position-absolute top-50 start-50 translate-middle z-1">
+        <h1 class="display-4 fw-bold">Astro Club Venue</h1>
+      </div>
+    </div>
+    
+</head>
+<body>
+  
+  <!-- Main Content -->
+  <div class="container my-5">
+    
+
+    <div class="text-center mb-5">
+      <a href="booking.html" class="btn btn-primary btn-lg">Book the Venue</a>
+      <p class="mt-3">You must be a member to make a reservation.</p>
+    </div>
+
+    <h2 class="mb-3 text-center text-primary">Events Held This Month</h2>
+    <div class="row text-center mb-4">
+      <div class="col-md-6">
+        <img src="event1.png.jpeg" class="img-fluid rounded" alt="Saturn Observation"  style="height: 400px;">
+        
+      </div>
+      <div class="col-md-6">
+        <img src="event2.png.jpeg" class="img-fluid rounded" alt="Eid Crescent Sighting" style="height: 400px;" >
+        
+      </div>
+    </div>
+    <div class="row text-center mb-4">
+        <div class="col-md-6">
+            
+            <h5 class="mt-2">Saturn Observation</h5>
+            <p>14/3/2025<br>Sultan Qaboos University</p>
+          </div>
+          <div class="col-md-6">
+        
+            <h5 class="mt-2">Eid Crescent Sighting</h5>
+            <p>14/3/2025<br>Sultan Qaboos University</p>
+          </div>
+
+    </div>
+    <h2 class="mb-3">Search Members</h2>
+    <div class="input-group mb-4">
+      <input type="text" class="form-control" id="searchInput" placeholder="Search by name or email">
+      <button class="btn btn-outline-secondary" onclick="searchMember()">Search</button>
+    </div>
+    <div id="searchResult" class="alert alert-info d-none"></div>
+
+    <h2 class="mb-3">Filter by Gender</h2>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="genderFilter" id="filterAll" value="all" checked onchange="filterMembers()">
+      <label class="form-check-label" for="filterAll">All</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="genderFilter" id="filterMale" value="male" onchange="filterMembers()">
+      <label class="form-check-label" for="filterMale">Male</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="genderFilter" id="filterFemale" value="female" onchange="filterMembers()">
+      <label class="form-check-label" for="filterFemale">Female</label>
+    </div>
+
+    <h2 class="mb-3">Members' Contact Information</h2>
+    <div class="table-responsive">
+      <table id="membersTable" class="table table-bordered">
+        <thead class="table-light">
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <h2 class="mb-3">Join the Astro Club</h2>
+    <form id="memberForm" class="row g-3 mb-5">
+      <div class="col-md-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" required>
+        <div class="invalid-feedback">Name is required.</div>
+      </div>
+      <div class="col-md-3">
+        <label for="description" class="form-label">Description</label>
+        <input type="text" class="form-control" id="description" required>
+        <div class="invalid-feedback">Description is required.</div>
+      </div>
+      <div class="col-md-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" required>
+        <div class="invalid-feedback">Email is required.</div>
+      </div>
+      <div class="col-md-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" required>
+        <div class="invalid-feedback">Password is required.</div>
+      </div>     
+      <div class="col-md-3">
+        <label class="form-label">Gender</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+          <label class="form-check-label" for="male">Male</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gender" id="female" value="female" required>
+          <label class="form-check-label" for="female">Female</label>
+        </div>
+        <div class="invalid-feedback">Gender is required.</div>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Add Member</button>
+      </div>
+    </form>
+
+
+
+  </div>
+
+  <script>
+    // Member constructor (no phone)
+    function Member(name, description, email, password, gender) {
+      this.name = name;
+      this.description = description;
+      this.email = email;
+      this.password = password;
+      this.gender = gender;
+    }
+  
+    // Initial dummy members
+    const members = [
+      new Member("Ahmed Ali", "Astronomy Enthusiast", "ahmed@example.com", "1234", "male"),
+      new Member("Sara Salim", "Astrophysicist", "sara@example.com", "5678", "female"),
+      new Member("Said Khalid", "Meteor Hunter", "said@example.com", "abcd", "male"),
+      new Member("Nada Ahmed", "Planetarium Guide", "nada@example.com", "efgh", "female"),
+    ];
+  
+    // Display members with gender filter
+    function displayMembers() {
+      const filter = document.querySelector('input[name="genderFilter"]:checked').value;
+      const table = document.getElementById("membersTable").querySelector("tbody");
+      table.innerHTML = "";
+      members.forEach(member => {
+        if (filter === "all" || member.gender === filter) {
+          const row = `<tr>
+            <td>${member.name}</td>
+            <td>${member.description}<br><small>${member.gender}</small></td>
+            <td>${member.email}</td>
+          </tr>`;
+          table.innerHTML += row;
+        }
+      });
+    }
+  
+    // Search by name or email
+    function searchMember() {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      const result = members.find(m => m.name.toLowerCase().includes(query) || m.email.toLowerCase().includes(query));
+      const display = document.getElementById("searchResult");
+      if (result) {
+        display.classList.remove("d-none");
+        display.textContent = `Found: ${result.name} (${result.email})`;
+      } else {
+        display.classList.remove("d-none");
+        display.textContent = "No matching member found.";
+      }
+    }
+  
+    // Form submission (add member)
+    document.getElementById("memberForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+  
+      // Get form values
+      const name = document.getElementById("name");
+      const description = document.getElementById("description");
+      const email = document.getElementById("email");
+      const password = document.getElementById("password");
+      const gender = document.querySelector('input[name="gender"]:checked');
+  
+      let isValid = true;
+  
+      // Reset validation styles
+      [name, description, email, password].forEach(field => field.classList.remove("is-invalid"));
+  
+      // Email must include '@' and '.'
+      if (!email.value.includes("@") || !email.value.includes(".")) {
+        email.classList.add("is-invalid");
+        isValid = false;
+      }
+  
+      // Add member if valid
+      if (isValid) {
+        members.push(new Member(name.value, description.value, email.value, password.value, gender.value));
+        displayMembers();
+        this.reset();
+      }
+    });
+  
+    // Filter function on radio change
+    function filterMembers() {
+      displayMembers();
+    }
+  
+    // On page load
+    window.onload = displayMembers;
+  </script>
+  
+  
+
+  
+</body>
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+    Email: info@stars.com | Phone: +968 0099 5663
+  </footer>
+</html>
